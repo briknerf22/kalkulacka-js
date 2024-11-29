@@ -81,8 +81,10 @@ body.dark-mode .buttons button:hover {
 }
 
 #theme-toggle {
-    margin-bottom: 10px;
-    padding: 10px;
+    position: fixed; /* Tlačítko bude pevně umístěno na obrazovce */
+    top: 20px; /* Vzdálenost od horního okraje */
+    right: 20px; /* Vzdálenost od pravého okraje */
+    padding: 10px 15px;
     font-size: 1em;
     background-color: #007bff;
     color: #fff;
@@ -90,6 +92,7 @@ body.dark-mode .buttons button:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    z-index: 1000; /* Zajišťuje, že bude vždy nad ostatními prvky */
 }
 
 #theme-toggle:hover {
