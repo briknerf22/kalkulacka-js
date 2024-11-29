@@ -1,3 +1,4 @@
+/* Základní styl */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -5,28 +6,49 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Světlé pozadí */
+    transition: background-color 0.3s, color 0.3s; /* Plynulý přechod mezi režimy */
+    color: #000;
+}
+
+body.dark-mode {
+    background-color: #121212; /* Tmavé pozadí */
+    color: #fff;
 }
 
 .calculator {
     display: inline-block;
-    width: 180px; /* Šířka kalkulačky včetně displeje a tlačítek */
+    width: 220px; /* Zvětšená šířka kalkulačky */
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s; /* Plynulý přechod */
+}
+
+body.dark-mode .calculator {
+    background-color: #333; /* Tmavší pozadí kalkulačky */
+    color: #fff;
 }
 
 #display {
     width: 100%;
-    height: 50px;
-    font-size: 1.5em;
-    text-align: right; /* Zarovná čísla doprava */
+    height: 60px; /* Větší výška displeje */
+    font-size: 2em; /* Větší text */
+    text-align: right;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     box-sizing: border-box;
+    background-color: #f9f9f9; /* Světlý displej */
+    color: #000;
+    transition: background-color 0.3s, color 0.3s; /* Plynulý přechod */
+}
+
+body.dark-mode #display {
+    background-color: #444; /* Tmavý displej */
+    color: #fff;
 }
 
 .buttons {
@@ -42,9 +64,43 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .buttons button:hover {
     background-color: #ddd;
+}
+
+body.dark-mode .buttons button {
+    background-color: #555;
+    color: #fff;
+}
+
+body.dark-mode .buttons button:hover {
+    background-color: #666;
+}
+
+#theme-toggle {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: #ff9500;
+    color: #121212;
+}
+
+body.dark-mode #theme-toggle:hover {
+    background-color: #cc7a00;
 }
