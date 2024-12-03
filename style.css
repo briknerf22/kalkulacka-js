@@ -1,4 +1,4 @@
-/* Základní styl */
+/* General Reset */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -18,7 +18,7 @@ body.dark-mode {
 
 .calculator {
     display: inline-block;
-    width: 300px; /* Zvětšená šířka kalkulačky */
+    width: 300px; /* Původní šířka kalkulačky */
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -53,7 +53,7 @@ body.dark-mode #display {
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* Původní zarovnání tlačítek */
     gap: 10px;
 }
 

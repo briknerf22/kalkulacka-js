@@ -1,31 +1,34 @@
 let display = document.getElementById('display');
 
 function appendToDisplay(value) {
-    display.value += value; // Přidá hodnotu na displej
+    display.value += value;
 }
 
 function clearDisplay() {
-    display.value = ''; // Vymaže displej
+    display.value = '';
+}
+
+function deleteLast() {
+    display.value = display.value.slice(0, -1);
 }
 
 function calculateResult() {
     try {
-        display.value = eval(display.value); // Vypočítá výraz na displeji
+        const sanitizedExpression = display.value
+            .replace('√', 'Math.sqrt')
+            .replace('log', 'Math.log10')
+            .replace('ln', 'Math.log'); // Replace additional functions
+        display.value = eval(sanitizedExpression);
     } catch (error) {
-        display.value = 'Chyba'; // Pokud je výraz neplatný
+        display.value = 'Chyba';
     }
 }
 
+// Theme toggle
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
 themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode'); // Přepnutí mezi dark a white mode
-
-    // Změna textu tlačítka
-    if (body.classList.contains('dark-mode')) {
-        themeToggle.textContent = '☀️ Light Mode';
-    } else {
-        themeToggle.textContent = '🌙 Dark Mode';
-    }
+    body.classList.toggle('dark-mode');
+    themeToggle.textContent = body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
 });
