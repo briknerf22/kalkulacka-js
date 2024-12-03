@@ -18,7 +18,7 @@ body.dark-mode {
 
 .calculator {
     display: inline-block;
-    width: 220px; /* Zvětšená šířka kalkulačky */
+    width: 300px; /* Zvětšená šířka kalkulačky */
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
