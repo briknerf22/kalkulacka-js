@@ -1,0 +1,19 @@
+{
+  "name": "kalkulacka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "app": "^0.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "open": "^8.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
