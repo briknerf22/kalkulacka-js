@@ -1,12 +1,17 @@
-const http = require('http');
-const app = require('./app');
+const express = require('express');
+const app = express();
+const path = require('path');
 
-require('dotenv').config()
+// Serve static files from the 'public' folder
+app.use(express.static(path.join(__dirname, 'public')));
 
-const { PORT } = process.env;
+// Route for the root URL to send index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
-const server = http. createServer(app);
-
-server.listen(PORT, 'localhost', () => {
-    console.log(`Server běží na http://localhost:${PORT}...`)
+// Start the server
+const { PORT = 3000 } = process.env;
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
